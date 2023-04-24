@@ -84,6 +84,10 @@ app.get('/cancel-payment', (req, res) => {
     res.send('Cancel successfull')
 })
 
-app.listen(3000);
+app.use(express.static(path.join(__dirname, "public")))
+const PORT = process.env.PORT || 3000;
 
-console.log("Puerto", 3000);
+app.listen(PORT);
+
+
+console.log("Puerto", PORT);
